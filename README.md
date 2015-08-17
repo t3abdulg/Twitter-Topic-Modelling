@@ -1,13 +1,15 @@
-# Twitter-Topic-Modelling
-Topic Modelling and Sentiment Analysis on Tweets Using LDA 
+# Twitter-Topic-Modelling <br />
+Topic Modelling and Sentiment Analysis on Tweets Using LDA  <br />
 
-Have all the dependecies installed.
+Have all the dependecies installed. <br />
 
-To Download the NLTK corpus:
-run:
-import nltk
-nltk.download()
+You Will Need your own Twitter API Keys <br />
+
+To Download the NLTK corpus: <br />
+run: <br />
+import nltk <br />
+nltk.download() <br />
 
 
-NOTE:
-If you're going to use this code, please cite it.
+NOTE: <br />
+If you're going to use this code, please cite it. <br />
