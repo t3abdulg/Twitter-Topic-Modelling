@@ -3,8 +3,18 @@ Topic Modelling and Sentiment Analysis on Tweets Using LDA  <br />
 
 ##Dependencies
 
-Install using [Pathogen], [Vundle], [Neobundle], or your favorite Vim package manager.
-Requires vim 7.4 or later for full functionality.
+Requires [Python 2.7.x]
+Requires [Gensim]
+[Gensim] is reuires [NumPy] and [SciPy]
+Requires [Twython]
+Requires [Langdetect]
 
 
 
+
+
+[Python 2.7.x]:https://www.python.org/downloads/
+[Gensim]:https://pypi.python.org/pypi/gensim
+[Numpy]:http://www.scipy.org/install.html
+[SciPy]:http://www.scipy.org/install.html
+[langdetect]:https://pypi.python.org/pypi/langdetect
