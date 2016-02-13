@@ -5,13 +5,26 @@ Topic Modelling and Sentiment Analysis on Tweets Using LDA  <br />
 
 Requires [Python 2.7.x]
 
+
+[Gensim] requires [NumPy] and [SciPy]
+
+```
+sudo pip install numpy
+sudo pip install scipy
+```
 Requires [Gensim]
-
-[Gensim] is reuires [NumPy] and [SciPy]
-
+```
+sudo pip install gensim
+```
 Requires [Twython]
 
+```
+sudo pip install twython
+```
 Requires [Langdetect]
+```
+sudo pip install langdetect
+```
 
 
 
