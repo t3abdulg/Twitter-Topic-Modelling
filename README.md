@@ -18,3 +18,4 @@ Requires [Langdetect]
 [Numpy]:http://www.scipy.org/install.html
 [SciPy]:http://www.scipy.org/install.html
 [langdetect]:https://pypi.python.org/pypi/langdetect
+[Twython]:https://twython.readthedocs.org/en/latest/usage/install.html
