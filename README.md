@@ -4,9 +4,13 @@ Topic Modelling and Sentiment Analysis on Tweets Using LDA  <br />
 ##Dependencies
 
 Requires [Python 2.7.x]
+
 Requires [Gensim]
+
 [Gensim] is reuires [NumPy] and [SciPy]
+
 Requires [Twython]
+
 Requires [Langdetect]
 
 
