@@ -1,5 +1,9 @@
 # Twitter-Topic-Modelling <br />
-Topic Modelling and Sentiment Analysis on Tweets Using LDA  <br />
+Topic Modelling and Sentiment Analysis on Tweets Using LDA 
+
+##About
+
+This project utilizes LDA to model topics amongst queried tweets, and performs sentiment analysis on the tweets. The potential use cases of some of the concepts utilized in this project are almost infinite.
 
 
 ##How does it Work? 
@@ -55,9 +59,6 @@ Requires [Langdetect]
 ```
 sudo pip install langdetect
 ```
-
-
-
 
 [Python 2.7.x]:https://www.python.org/downloads/
 [Gensim]:https://pypi.python.org/pypi/gensim
