@@ -21,7 +21,15 @@ Well if we scrambled the text:
 
 > "It errors. alot programming However, and references a too static and typed kinda you is into pointers a more Python result run are is so I whereas like language. C++ life C++ a language, my dynamically as lot favourite is"
 
-As a Human, we can still kinof tell what the text is about can't we?
+As a Human, we can still kind of tell what the text is about can't we?
+
+LDA (latent dirichlet allocation) Works in a very smilar way.
+
+We feed it a bag of words which it assumes to be related. And it tries to generate what the topics might have been, which made up these bag of words.
+
+For such a reason, it makes sense to train the model using Wikipedia Articles where all the words in each article, ARE related.
+
+
 
 
 
