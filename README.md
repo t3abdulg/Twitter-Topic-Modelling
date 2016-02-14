@@ -4,6 +4,8 @@ Topic Modelling and Sentiment Analysis on Tweets Using LDA  <br />
 
 ##How does it Work? 
 
+*Note: I'll give it my best explanation which is very simplified.*
+
 Assume we had only 3 topics in the world, and that each topic is represented by a collection of probabilities of words that belong to them
 
 1. Programming (0.10*Python + 0.10*C++ + 0.10*C .... = 1)
@@ -25,15 +27,9 @@ As a Human, we can still kind of tell what the text is about can't we?
 
 LDA (latent dirichlet allocation) Works in a very smilar way.
 
-We feed it a bag of words which it assumes to be related. And it tries to generate what the topics might have been, which made up these bag of words.
+We feed it a bag of words which it assumes to be related (syntax, order, punctuation all dont matter!). And it tries to generate what the topics might have been, which made up these bag of words.
 
-For such a reason, it makes sense to train the model using Wikipedia Articles where all the words in each article, ARE related.
-
-
-
-
-
-
+For such a reason, it makes sense to train the model using Wikipedia Articles where all the words in each article, ARE related (to an extent).
 
 
 ##Dependencies
