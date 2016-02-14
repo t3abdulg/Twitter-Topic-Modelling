@@ -1,6 +1,12 @@
 # Twitter-Topic-Modelling <br />
 Topic Modelling and Sentiment Analysis on Tweets Using LDA 
 
+## Contents
+ - [About](#about)
+ - [How does it Work?](#how-does-it-work)
+ - [Dependencies](#dependencies)
+ - [Future-Plans](#future-plans)
+
 ##About
 
 This project utilizes LDA to model topics amongst queried tweets, and performs sentiment analysis on the tweets. The potential use cases of some of the concepts utilized in this project are almost infinite.
@@ -59,6 +65,9 @@ Requires [Langdetect]
 ```
 sudo pip install langdetect
 ```
+##Future Plans
+
+While the current Flask-Application works well to visualize the calculated, much more could be done. I plan to build a REST-API, and build an express/angular/node Web-App that would communicate with the API and display the information in a much more visually pleasing way.
 
 [Python 2.7.x]:https://www.python.org/downloads/
 [Gensim]:https://pypi.python.org/pypi/gensim
