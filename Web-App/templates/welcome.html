@@ -1,0 +1,161 @@
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+<style>
+		.parent:hover > h2 {
+  			opacity: 0.5;
+		}
+		.parent:hover > h2:hover {
+ 			opacity: 1.0;
+		}
+
+</style>
+
+<html>
+	<head>
+	
+	<title> Twitter Sentiment </title>
+	<meta name ="viewport", content ="width=device-width, inital-scale=1.0">
+	
+  	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>  
+
+	</head>
+	<nav class="navbar navbar-default" role="navigation">
+  <div class="container-fluid" id="navfluid">
+      <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#nav-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="">Twitter Sentiment</a>
+    </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="nav-collapse">
+      <ul class="nav navbar-nav">
+      	<li><a href="/howitworks">How it Works</a></li>
+        <li><a href="/contact">Contact</a></li>
+
+      </ul>
+     
+    </div><!-- /.navbar-collapse -->
+  </div>
+  </div>
+
+
+</nav>
+	<div class="container">
+	<div class="row">
+        <div class="col-md-12">
+            <div id="custom-search-input">
+                <div class="input-group col-md-8">
+                    <form action="/" method="POST">
+                    <span class="input-group-btn">
+				        <input type="text" name="text" class="form-control input-lg" placeholder="What would you like to query tweets about?" >
+				         <button type="submit" class="btn btn-info">Query!</button>
+    				</span>
+    				</form>
+                </div>
+            </div>
+        </div>
+	</div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class ='col-md-12'>
+            
+                <b>Word-Distribution without Stop Words</b><br/>
+                <canvas id="wordnostop" width="1100" height="300"></canvas>
+            
+            
+                <b>Word-Distribution with Stop Words</b><br />
+                    <canvas id="wordwithstop" width="1100" height="300"></canvas>
+            
+            
+        </div>
+    </div>
+	<div class="row">
+		<div class ='col-md-4'>
+		<label for = "skills">
+             Sentiment Analytics<br />
+            <canvas id="skills" width="300" height="300"></canvas>
+		</label>
+		</div>
+		<div class ='col-md-4'>
+		<h2>Topic Models</h2>
+		</div>
+	</div>
+	<div class="row">
+        <div class="col-md-4">
+        <script src = "https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.js"> </script>
+  
+    
+    <script>
+        var pieData = {{ pieData|tojson|safe }}
+        
+        var barDataWithStopWords = {
+            labels: {{ barDataLabelsWithStopWords|safe }},
+            datasets: [
+                {
+                    label: "My First dataset",
+                    fillColor: "rgba(220,220,220,0.5)",
+                    strokeColor: "rgba(220,220,220,0.8)",
+                    highlightFill: "rgba(220,220,220,0.75)",
+                    highlightStroke: "rgba(220,220,220,1)",
+                    data: {{ barDataWithStopWords }}
+                },
+            
+            ]
+        };
+        
+        var barDataNoStopWords = {
+            labels: {{ barDataLabelsNoStopWords|safe }},
+            datasets: [
+                {
+                    label: "My First dataset",
+                    fillColor: "rgba(151,187,205,0.5)",
+                    strokeColor: "rgba(151,187,205,0.8)",
+                    highlightFill: "rgba(151,187,205,0.75)",
+                    highlightStroke: "rgba(151,187,205,1)",
+                    data: {{ barDataNoStopWords }}
+                },
+            
+            ]
+        };
+
+        var context = document.getElementById('skills').getContext('2d');
+        var skillsChart = new Chart(context).PolarArea(pieData,{responsive: true});
+        
+        var ctx = document.getElementById('wordnostop').getContext('2d');
+        var barWithStopWords = new Chart(ctx).Bar(barDataWithStopWords,{scaleLabel: "          <%=value%>", responsive: true, barShowStroke: false});
+        
+        
+        var ctx = document.getElementById('wordwithstop').getContext('2d');
+        var barmpStopWords = new Chart(ctx).Bar(barDataNoStopWords, {scaleLabel: "          <%=value%>", responsive: true, barShowStroke: false});
+    </script>
+        </div>
+        <div class="col-md-4">
+        {{tweet4|safe}} 
+        {{tweet5|safe}} 
+        {{tweet6|safe}} 
+        </div>
+
+        <div class="col-md-4">
+        	<section class='parent'>
+
+          	{%- for item in item_list %}
+          	<h2>
+    			{{ item }}{% if not loop.last %},{% endif %}
+
+			<h2>
+    		
+			{%- endfor %}
+			</section>
+        </div>
+
+	</div>
+
+</html>
