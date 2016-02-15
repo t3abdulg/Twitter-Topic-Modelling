@@ -49,21 +49,21 @@ Requires [Python 2.7.x]
 [Gensim] requires [NumPy] and [SciPy]
 
 ```
-sudo pip install numpy
-sudo pip install scipy
+pip install numpy
+pip install scipy
 ```
 Requires [Gensim]
 ```
-sudo pip install gensim
+pip install gensim
 ```
 Requires [Twython]
 
 ```
-sudo pip install twython
+pip install twython
 ```
 Requires [Langdetect]
 ```
-sudo pip install langdetect
+pip install langdetect
 ```
 ##Future Plans
 
