@@ -5,6 +5,7 @@ Topic Modelling and Sentiment Analysis on Tweets Using LDA
  - [About](#about)
  - [How does it Work?](#how-does-it-work)
  - [Dependencies](#dependencies)
+ - [Getting it to Work](#getting-it-to-work)
  - [Future-Plans](#future-plans)
 
 ##About
@@ -104,6 +105,20 @@ This will make a file that maps each word to unique id, and another one that sto
 
 Run the script in this repo named:
 > "enwiki-latest-pages-articles.xml.bz2"
+
+
+
+####Twitter API
+
+You need to obtain your own Twitter API keys and place them in the place holders
+```
+APP_KEY = 'hiE4tBmkZaf1wC5PT4hUBaxMz'
+APP_SECRET = '7OEgCKwGrQYAwl5I1kYwXwk14wZc2HBC6GnXFUxZlrrTCnge3C'
+twitter = Twython(APP_KEY, APP_SECRET)
+```
+The current keys, are just placeholders. **(They will not work)** 
+Keys can be obtained from 
+> dev.twitter.com
 
 ##Future Plans
 
