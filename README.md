@@ -104,9 +104,9 @@ This will make a file that maps each word to unique id, and another one that sto
 ####Training the LDA model
 
 Run the script in this repo named:
-> "enwiki-latest-pages-articles.xml.bz2"
+> "ldatraining.py2"
 
-
+with both all the filed obtained from the preprocessing step in the same directory
 
 ####Twitter API
 
