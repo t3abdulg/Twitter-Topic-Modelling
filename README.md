@@ -118,7 +118,7 @@ twitter = Twython(APP_KEY, APP_SECRET)
 ```
 The current keys, are just placeholders. **(They will not work)** 
 Keys can be obtained from 
-> dev.twitter.com
+> https://dev.twitter.com/
 
 ##Future Plans
 
