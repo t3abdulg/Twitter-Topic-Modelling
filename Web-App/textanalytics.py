@@ -6,6 +6,15 @@ from string import maketrans,punctuation
 import json                 
                  
 def analyzeSentiment(sentences):
+
+    """
+    analyzeSentiment(listOfString) -> listofJSON
+
+    returns a JSON object wrapped in an array, that contains the amount of positive, 
+    neutral and negative tweets ready to be processed by charJS
+
+    """
+
     neu = 0
     pos = 0
     neg = 0 
@@ -31,6 +40,13 @@ def analyzeSentiment(sentences):
  
 def preProcessHistogram(documents):
 
+    """
+    preProcessHistogram(listofString) -> listOfString
+
+    consumes a listofSentences and Tokenizes it, and returns a list of lemmatized words.
+
+    """
+
     paragraph = ""
     for sentence in documents:
         paragraph = paragraph + " " + sentence.lower()
@@ -49,7 +65,17 @@ def preProcessHistogram(documents):
     return words
    
    
-def wordHistogramWithStopWords(splitText):
+def wordHistogramNoStopWords(splitText):
+
+    """
+
+    wordHistogramNoStopWords(listofString)-> JSON
+
+    consumes a list of strings (tokenized words) and removes all stopwords and returns the
+    number of times each word occurs in JSON such that it can be used by chartJS
+
+
+    """
 
     #list of stopwords taken from nltk (and I added a few of my own)
     stoplist = set(stopwords.words('english') + ['get', '!', ',','.','it','it\'s','-'])
@@ -63,8 +89,17 @@ def wordHistogramWithStopWords(splitText):
     return json.dumps(resulting_count)
 
 
-def wordHistogramNoStopWords(splitText):
-    
+def wordHistogramWithStopWords(splitText):
+
+    """
+
+    wordHistogramWithStopWords(listofString)-> JSON
+
+    consumes a list of strings (tokenized words) and returns the number of times each 
+    word occurs in JSON such that it can be used by chartJS
+
+    """
+
     #counts the amount of each word
     resulting_count = collections.Counter(splitText)   
     
@@ -72,6 +107,15 @@ def wordHistogramNoStopWords(splitText):
 
 
 def processForBarGraph(histogramData):
+
+    """
+
+    processForBarGraph(JSON) -> listofList
+
+
+    processes the data such that it can be sent to chartJS and returns it
+
+    """
     labels = []
     data = []
     
@@ -86,6 +130,16 @@ def processForBarGraph(histogramData):
         
 
 def ModelTopics(sentences):
+
+    """
+
+    ModelTopics(listofString) -> listOfString
+
+    consumes a list of strings, tokenizes it and feeds it to the loaded LDA model.
+    collects the probabilities and returns them in a list of Strings.
+
+
+    """
 
     # Tokenize
     texts = [[word for word in document.lower().split()]

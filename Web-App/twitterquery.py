@@ -5,11 +5,29 @@ import re
 
 
 def fetchTweets(queryTopic,twitter):
+
+
+    """
+
+    fetchTweets(String, TwitterApiObject) -> listOfString
+
+    returns a list of Tweets (strings)
+
+
+    >>> APP_SECRET = ####
+    >>> APP_KEY = ####
+    >>> twitter = Twython(APP_KEY,APP_SECRET)
+    >>> fetchTweets("Python", twitter)
+        ["I love python!", "Python is the best language", "Python is great, but so it C++!",....]
+
+
+    """
     
     raw_data = twitter.search(q=str(queryTopic), count= 10, lang='en')
 
     tweets = []
 
+    #search through JSON data and extract the tweets only.
     for tweet in raw_data['statuses']:
         tweets.append((tweet['text']).encode('ascii', 'ignore'))
      
