@@ -49,29 +49,44 @@ Requires [Python 2.7.x]
 [Gensim] requires [NumPy] and [SciPy]
 
 ```
-sudo pip install numpy
-sudo pip install scipy
+pip install numpy
+pip install scipy
 ```
 Requires [Gensim]
 ```
-sudo pip install gensim
+pip install gensim
+```
+Requires [Flask]
+```
+pip install flask
+```
+Rquires [VaderSentiment]
+```
+pip install vadersentiment
+```
+Requires [NLTK]
+```
+pip install nltk
 ```
 Requires [Twython]
-
 ```
-sudo pip install twython
+pip install twython
 ```
 Requires [Langdetect]
 ```
-sudo pip install langdetect
+pip install langdetect
 ```
 ##Future Plans
 
 While the current Flask-Application works well to visualize the calculated, much more could be done. I plan to build a REST-API, and build an express/angular/node Web-App that would communicate with the API and display the information in a much more visually pleasing way.
 
+
 [Python 2.7.x]:https://www.python.org/downloads/
 [Gensim]:https://pypi.python.org/pypi/gensim
 [Numpy]:http://www.scipy.org/install.html
 [SciPy]:http://www.scipy.org/install.html
+[Flask]:http://flask.pocoo.org/
+[NLTK]:http://www.nltk.org/install.html
+[VaderSentiment]:https://pypi.python.org/pypi/vaderSentiment
 [langdetect]:https://pypi.python.org/pypi/langdetect
 [Twython]:https://twython.readthedocs.org/en/latest/usage/install.html
