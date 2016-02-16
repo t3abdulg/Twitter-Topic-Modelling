@@ -84,3 +84,29 @@ def processForBarGraph(histogramData):
    
     return [labels,data]
         
+
+def ModelTopics(sentences):
+
+    # Tokenize
+    texts = [[word for word in document.lower().split()]
+             for document in sentences]
+
+    #load Model
+    lda = gensim.models.LdaModel.load('lda.model')
+    dictionary = gensim.corpora.Dictionary.load_from_text('wiki_en_wordids.txt')
+    
+    #transform words to mapping from ldaModels dictionary
+    corpus = [dictionary.doc2bow(text) for text in texts]
+
+    #apply the model on the new documents
+    topic_vec = lda[corpus]
+    
+    topics = []
+    
+    for i in topic_vec:
+        for j in i:
+            topic.append(lda.print_topics(j[0]))
+            
+    return topics
+            
+    
