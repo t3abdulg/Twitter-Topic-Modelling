@@ -8,12 +8,12 @@ Topic Modelling and Sentiment Analysis on Tweets Using LDA
  - [Getting it to Work](#getting-it-to-work)
  - [Future-Plans](#future-plans)
 
-##About
+## About
 
 This project utilizes LDA to model topics amongst queried tweets, and performs sentiment analysis on the tweets. The potential use cases of some of the concepts utilized in this project are almost infinite.
 
 
-##How does it Work? 
+## How does it Work? 
 
 *Note: I'll give it my best explanation which is very simplified.*
 
@@ -42,7 +42,7 @@ We feed it a bag of words which it assumes to be related (syntax, order, punctua
 
 For such a reason, it makes sense to train the model using Wikipedia Articles where all the words in each article, ARE related (to an extent).
 
-##Dependencies
+## Dependencies
 
 Requires [Python 2.7.x]
 
@@ -77,9 +77,9 @@ Requires [Langdetect]
 pip install langdetect
 ```
 
-##Getting it to Work
+## Getting it to Work
 
-####Downloading NLTK Data
+#### Downloading NLTK Data
 After we have NLTK installed, we have to install its data. We do that by running:
 ```
 import nltk
@@ -87,7 +87,7 @@ nltk.download()
 ```
 and selecting download all data.
 
-####Preprocessing the Wikipedia Corpus
+#### Preprocessing the Wikipedia Corpus
 
 Navigate to:
 > https://dumps.wikimedia.org/enwiki/latest/
@@ -101,14 +101,14 @@ python -m gensim.scripts.make_wiki enwiki-latest-pages-articles.xml.bz2 wiki_en
 ```
 This will make a file that maps each word to unique id, and another one that stores a file that contains tf–idf (term frequency index document frequency) vectors. (we need these to train the model). **This process literally took 8-10 hours on my computer**
 
-####Training the LDA model
+#### Training the LDA model
 
 Run the script in this repo named:
 > "ldatraining.py2"
 
 with both all the filed obtained from the preprocessing step in the same directory
 
-####Twitter API
+#### Twitter API
 
 You need to obtain your own Twitter API keys and place them in the place holders
 ```
@@ -120,7 +120,7 @@ The current keys, are just placeholders. **(They will not work)**
 Keys can be obtained from 
 > https://dev.twitter.com/
 
-##Future Plans
+## Future Plans
 
 Surprisingly, some of my previous approaches where I didn't use the entire Wikipedia corpus, but instead used individual tweets themselves yielded better results. I'm going to try to change the chunk-size and the number of passes and the number of topics and see what happens. Unfortunately, the corpus is so large and it takes so much time to train the model that you don't really have the option to "play around" as much.
 
